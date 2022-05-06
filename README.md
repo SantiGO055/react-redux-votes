@@ -4,4 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What does
 
-This app show a list of anecdotes and you can vote the item or add new anecdotes
+This app show a list of anecdotes, you can:
+- Vote anecdote
+- Add new anecdotes
+
+#### 
+
+Learning from https://fullstackopen.com/
