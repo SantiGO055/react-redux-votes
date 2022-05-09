@@ -64,7 +64,7 @@ export const createAnecdote = (content) => {
     data: {
       content,
       id: getId(),
-      votes
+      votes: 0
     }
   }
 }
