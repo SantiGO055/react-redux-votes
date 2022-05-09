@@ -6,6 +6,7 @@
 This app show a list of anecdotes, you can:
 - Vote anecdote
 - Add new anecdotes
+- Filter anecdotes for importance
 
 #### 
 
