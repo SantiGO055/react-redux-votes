@@ -11,9 +11,9 @@ export const CardAnecdote = ({onClickardo, anecdote, onClickToggleImportance})=>
         <div className="card-body">
             <h5 className="card-title" style={{wordBreak: "break-all", hyphens: "auto"}}>{anecdote.content}</h5>
             
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><p className="card-text">Tiene {anecdote.votes} votos</p></li>
-                <li class="list-group-item">{anecdote.important ? <strong> importante</strong> : 'No importante'}</li>
+            <ul className="list-group list-group-flush">
+                <li className="list-group-item"><p className="card-text">Tiene {anecdote.votes} votos</p></li>
+                <li className="list-group-item">{anecdote.important ? <strong> importante</strong> : 'No importante'}</li>
                 
             </ul>
             
