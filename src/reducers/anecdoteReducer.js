@@ -13,13 +13,14 @@ const asObject = (anecdote) => {
   return {
     content: anecdote,
     id: getId(),
-    votes: 0
+    votes: 0,
+    important: false
   }
 }
 
 const initialState = anecdotesAtStart.map(asObject)
 
-const reducer = (state = initialState, action) => {
+const anecdoteReducer = (state = initialState, action) => {
   // state = JSON.parse(JSON.stringify(initialState));
   switch(action.type){
     case 'VOTE':
@@ -39,6 +40,16 @@ const reducer = (state = initialState, action) => {
       return originalTrips.map(anec=> anec.id !== id ? anec : changedAnecdote);
     case 'NEW_ANECDOTE':
       return [...state, action.data]
+    case "TOGGLE_IMPORTANCE":
+      const idImportance = action.data.id
+      const noteToChange = state.find(n => n.id === idImportance)
+      const changedNote = { 
+        ...noteToChange, 
+        important: !noteToChange.important 
+      }
+      return state.map(note =>
+        note.id !== idImportance ? note : changedNote 
+      )
   }
   
   console.log('state now: ', state)
@@ -68,8 +79,13 @@ export const createAnecdote = (content) => {
     }
   }
 }
-
+export const toggleImportanceOf = (id) => {
+  return {
+    type: 'TOGGLE_IMPORTANCE',
+    data: { id }
+  }
+}
 //la parrilla de dario av corro y moron
 //av gaona
 
-export default reducer
+export default anecdoteReducer
